@@ -13,10 +13,12 @@ const products = [
         id: 'hoa-vien-do-4-banh-re',
         name: 'Hoa viên đỏ 4 bánh rẻ',
         folder: 'hoa-vien-do-4-banh-re',
-        thumbnail: 'image/hoa-vien-do-4-banh-re/hoa-vien-do-4-banh-re-3.jpg"',
+        thumbnail: 'image/hoa-vien-do-4-banh-re/hoa-vien-do-4-banh-re-1.jpg"',
         price: 'Từ 16.000đ đến 20.000đ',
         description: 'Bộ vỏ hộp hoa viên đỏ đẹp mắt.',
-        videos: ['image/hoa-vien-do-4-banh-re/hoa-vien-do-4-banh-re-1.mp4']
+        videos: [
+            'image/hoa-vien-do-4-banh-re/hoa-vien-do-4-banh-re-1.mp4'
+        ]
     },
     {
         id: 'song-nguyet-4-6-banh',
@@ -203,6 +205,14 @@ function getRandomProductImage(product) {
         const validIndices = [3, 4, 5, 6];
         const randomIndex = validIndices[Math.floor(Math.random() * validIndices.length)];
         return `image/${product.folder}/tui-dung-banh-trung-thu-sz-91011-${randomIndex}.jpg`;
+    }
+
+     // Trường hợp đặc biệt cho hoa-vien-do-4-banh-re
+     if (product.id === 'hoa-vien-do-4-banh-re') {
+        // Chọn số ngẫu nhiên từ các ảnh có sẵn (3-6 là ảnh đẹp nhất)
+        const validIndices = [1, 2, 3, 4];
+        const randomIndex = validIndices[Math.floor(Math.random() * validIndices.length)];
+        return `image/${product.folder}/hoa-vien-do-4-banh-re-${randomIndex}.jpg`;
     }
     
     // Xử lý cho các sản phẩm khác
