@@ -73,32 +73,51 @@
 
     <script src="js/products.js"></script>
     <script src="js/product-detail.js"></script>
-    <!-- Nút Chat Zalo Cố Định với Hiệu Ứng Chuông Reo -->
-    <div class="fixed bottom-6 right-6 z-50 shake-animation">
-        <!-- Hiệu ứng quầng sáng -->
-        <div class="absolute inset-0 rounded-full bg-blue-400/40 pulse-ring pointer-events-none"></div>
-        <div class="absolute inset-0 rounded-full bg-blue-400/40 pulse-ring pointer-events-none" style="animation-delay: 0.5s"></div>
-        
-        <!-- Nút Zalo với Biểu Tượng Thay Thế -->
-        <a href="https://zalo.me/0965671689" target="_blank" 
-           class="relative flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full w-16 h-16 shadow-lg transition-all duration-300 hover:scale-110">
-            <span class="sr-only">Chat với chúng tôi qua Zalo</span>
+    <!-- Container cho các nút chat -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <!-- Nút Chat Zalo Cố Định với Hiệu Ứng Chuông Reo -->
+        <div class="shake-animation relative">
+            <!-- Hiệu ứng quầng sáng -->
+            <div class="absolute inset-0 rounded-full bg-blue-400/40 pulse-ring pointer-events-none"></div>
+            <div class="absolute inset-0 rounded-full bg-blue-400/40 pulse-ring pointer-events-none" style="animation-delay: 0.5s"></div>
             
-            <!-- Phương án 1: Biểu tượng Zalo chính thức dạng SVG
-            <svg class="w-8 h-8 zalo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                <path fill="#fff" d="M24.5 10c-7.444 0-13.5 6.056-13.5 13.5s6.056 13.5 13.5 13.5 13.5-6.056 13.5-13.5S31.944 10 24.5 10zm-5.155 15.937a1.307 1.307 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-1.886a1.307 1.307 0 0 1 1.306-1.306h.01c.722 0 1.306.584 1.306 1.306v1.886zm3.714 0a1.307 1.307 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-4.78c0-.722.584-1.306 1.306-1.306h.01c.722 0 1.306.584 1.306 1.306v4.78zm3.733 0a1.307 1.307 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-1.886c0-.722.584-1.306 1.306-1.306h.01c.722 0 1.306.584 1.306 1.306v1.886zm5.338 0c0 2.342-2.74 2.906-2.74 2.906h-1.252v1.562a1.308 1.308 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-9.903c0-.722.584-1.306 1.306-1.306h2.568c2.342 0 2.74 1.888 2.74 1.888v4.853zm-2.74-3.087h-1.252v2.73h1.252c.833 0 .833-.68.833-.68v-1.367c0-.683-.833-.683-.833-.683z"></path>
-            </svg> -->
+            <!-- Nút Zalo với Biểu Tượng Thay Thế -->
+            <a href="https://zalo.me/0965671689" target="_blank" 
+               class="relative flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full w-16 h-16 shadow-lg transition-all duration-300 hover:scale-110">
+                <span class="sr-only">Chat với chúng tôi qua Zalo</span>
+                
+                <!-- Phương án 1: Biểu tượng Zalo chính thức dạng SVG
+                <svg class="w-8 h-8 zalo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path fill="#fff" d="M24.5 10c-7.444 0-13.5 6.056-13.5 13.5s6.056 13.5 13.5 13.5 13.5-6.056 13.5-13.5S31.944 10 24.5 10zm-5.155 15.937a1.307 1.307 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-1.886a1.307 1.307 0 0 1 1.306-1.306h.01c.722 0 1.306.584 1.306 1.306v1.886zm3.714 0a1.307 1.307 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-4.78c0-.722.584-1.306 1.306-1.306h.01c.722 0 1.306.584 1.306 1.306v4.78zm3.733 0a1.307 1.307 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-1.886c0-.722.584-1.306 1.306-1.306h.01c.722 0 1.306.584 1.306 1.306v1.886zm5.338 0c0 2.342-2.74 2.906-2.74 2.906h-1.252v1.562a1.308 1.308 0 0 1-1.306 1.306h-.01a1.307 1.307 0 0 1-1.306-1.306v-9.903c0-.722.584-1.306 1.306-1.306h2.568c2.342 0 2.74 1.888 2.74 1.888v4.853zm-2.74-3.087h-1.252v2.73h1.252c.833 0 .833-.68.833-.68v-1.367c0-.683-.833-.683-.833-.683z"></path>
+                </svg> -->
+                
+                <!-- Phương án 2: Sử dụng hình ảnh logo Zalo (Không hiển thị mặc định, bỏ comment để dùng) -->
+                <img src="./image/zalo-hd-logo.png" alt="Zalo" class="w-10 h-10 zalo-icon">
+                
+                <!-- Phương án 3: Biểu tượng Zalo đơn giản hơn (Không hiển thị mặc định, bỏ comment để dùng) -->
+                <!-- <svg class="w-8 h-8 zalo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 230">
+                     <circle cx="115" cy="115" r="115" fill="#0068FF" />
+                     <path fill="#fff" d="m56.19 98.63c.08-1.05.2-2.1.25-3.14.96-18.2 15.63-33.95 33.61-36.5 20.94-2.98 39.99 10.98 43.57 31.84 1.76 10.26-1.22 19.1-8.31 26.57a62.6 62.6 0 0 1-11.8 9.36 5.25 5.25 0 0 0-2.44 4.85c.09 2.96.02 5.92.02 8.88l.06 1.32h-15.78v-1.46c0-2.76 0-5.52.02-8.28a5.92 5.92 0 0 0-3.84-5.74c-11.3-5.38-19.43-13.39-22.92-25.54-1.7-5.92-1.92-11.74-.45-17.78Zm74.96 20.8c.03-.81-.08-1.61-.27-2.39-1.28-5.08-6.15-8.76-11.6-8.78-5.3-.02-9.93 3.48-11.38 8.56a12.3 12.3 0 0 0 2.82 11.71 10.86 10.86 0 0 0 8.38 3.76c5.31.17 9.83-3.35 11.35-8.55.33-1.39.51-2.81.72-4.29-.01 0-.01-.01-.02-.02Zm-51.56-.61c.01 4.54 2.22 8.02 6.75 10.7.96.57 1.29.28 1.29-.75-.02-4.55 0-9.11-.04-13.66-.03-3.65-1.75-6.48-4.93-8.3a8.8 8.8 0 0 0-3.07-1.04c-.01 4.35-.05 8.7 0 13.05h.01Z"/>
+                     <path fill="#fff" d="M172.32 76.66v76.35h-32.33c-.05-.97-.15-1.95-.15-2.92 0-3.38-.04-6.76.02-10.13.02-1.07-.39-1.64-1.23-2.19-7.26-4.73-12.24-11.24-14.95-19.6-3.53-10.89-2.48-21.44 3.45-31.36 8.11-13.61 20.08-21.4 36.03-22.26 3.12-.17 6.26-.01 9.41-.01l-.25 12.12h.02ZM142.8 113.5a11.8 11.8 0 0 0-9.66 5.05 11.86 11.86 0 0 0 6.09 17.88c6.29 2.14 13.08-1.5 14.85-7.93 1.97-7.16-2.69-15.17-11.27-15Z"/>
+                 </svg> -->
+            </a>
+        </div>
+        <!-- Nút Chat Messenger -->
+        <div class="shake-animation relative">
+            <!-- Hiệu ứng quầng sáng màu xanh Facebook -->
+            <div class="absolute inset-0 rounded-full pulse-ring pointer-events-none" style="background-color: rgba(0, 106, 255, 0.4);"></div>
+            <div class="absolute inset-0 rounded-full pulse-ring pointer-events-none" style="background-color: rgba(0, 106, 255, 0.4); animation-delay: 0.5s"></div>
             
-            <!-- Phương án 2: Sử dụng hình ảnh logo Zalo (Không hiển thị mặc định, bỏ comment để dùng) -->
-            <img src="./image/zalo-hd-logo.png" alt="Zalo" class="w-10 h-10 zalo-icon">
-            
-            <!-- Phương án 3: Biểu tượng Zalo đơn giản hơn (Không hiển thị mặc định, bỏ comment để dùng) -->
-            <!-- <svg class="w-8 h-8 zalo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 230">
-                 <circle cx="115" cy="115" r="115" fill="#0068FF" />
-                 <path fill="#fff" d="m56.19 98.63c.08-1.05.2-2.1.25-3.14.96-18.2 15.63-33.95 33.61-36.5 20.94-2.98 39.99 10.98 43.57 31.84 1.76 10.26-1.22 19.1-8.31 26.57a62.6 62.6 0 0 1-11.8 9.36 5.25 5.25 0 0 0-2.44 4.85c.09 2.96.02 5.92.02 8.88l.06 1.32h-15.78v-1.46c0-2.76 0-5.52.02-8.28a5.92 5.92 0 0 0-3.84-5.74c-11.3-5.38-19.43-13.39-22.92-25.54-1.7-5.92-1.92-11.74-.45-17.78Zm74.96 20.8c.03-.81-.08-1.61-.27-2.39-1.28-5.08-6.15-8.76-11.6-8.78-5.3-.02-9.93 3.48-11.38 8.56a12.3 12.3 0 0 0 2.82 11.71 10.86 10.86 0 0 0 8.38 3.76c5.31.17 9.83-3.35 11.35-8.55.33-1.39.51-2.81.72-4.29-.01 0-.01-.01-.02-.02Zm-51.56-.61c.01 4.54 2.22 8.02 6.75 10.7.96.57 1.29.28 1.29-.75-.02-4.55 0-9.11-.04-13.66-.03-3.65-1.75-6.48-4.93-8.3a8.8 8.8 0 0 0-3.07-1.04c-.01 4.35-.05 8.7 0 13.05h.01Z"/>
-                 <path fill="#fff" d="M172.32 76.66v76.35h-32.33c-.05-.97-.15-1.95-.15-2.92 0-3.38-.04-6.76.02-10.13.02-1.07-.39-1.64-1.23-2.19-7.26-4.73-12.24-11.24-14.95-19.6-3.53-10.89-2.48-21.44 3.45-31.36 8.11-13.61 20.08-21.4 36.03-22.26 3.12-.17 6.26-.01 9.41-.01l-.25 12.12h.02ZM142.8 113.5a11.8 11.8 0 0 0-9.66 5.05 11.86 11.86 0 0 0 6.09 17.88c6.29 2.14 13.08-1.5 14.85-7.93 1.97-7.16-2.69-15.17-11.27-15Z"/>
-             </svg> -->
-        </a>
-    </div>
+            <!-- Nút Messenger -->
+            <a href="https://m.me/van.453776" target="_blank" 
+               class="relative flex items-center justify-center bg-[#0084ff] hover:bg-[#0066cc] text-white font-medium rounded-full w-16 h-16 shadow-lg transition-all duration-300 hover:scale-110">
+                <span class="sr-only">Chat với chúng tôi qua Messenger</span>
+                
+                <!-- Biểu tượng Messenger -->
+                <svg class="w-8 h-8 chat-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2.042C7.483 2.042 2.042 7.058 2.042 13.417C2.042 16.633 3.375 19.513 5.558 21.558V25.375L9.292 23.208C10.767 23.758 12.35 24.083 14 24.083C20.517 24.083 25.958 19.067 25.958 12.708C25.958 6.35 20.517 2.042 14 2.042ZM15.3 16.308L12.6 13.417L7.483 16.308L13.067 10.458L15.767 13.35L20.883 10.458L15.3 16.308Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
 </body>
 </html> 
