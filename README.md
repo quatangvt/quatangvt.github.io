@@ -6,6 +6,7 @@ Website giới thiệu và bán các phụ kiện bánh trung thu như hộp đ�
 
 - **Trang chủ**: Hiển thị danh sách tất cả sản phẩm phụ kiện.
 - **Trang chi tiết sản phẩm**: Hiển thị thông tin chi tiết và tất cả hình ảnh của một sản phẩm cụ thể.
+- **Ảnh thu nhỏ**: Hiển thị ba ảnh thu nhỏ dưới mỗi sản phẩm trên trang chủ để xem trước.
 
 ## Cấu trúc thư mục
 

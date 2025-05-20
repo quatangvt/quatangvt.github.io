@@ -20,7 +20,7 @@ function displayProducts(container) {
         productCard.innerHTML = `
             <a href="product.html?id=${product.id}">
                 <img src="${randomImage}" alt="${product.name}" onerror="this.src='${product.thumbnail}'">
-                <div class="product-thumbnails">
+                <div class="product-thumbnails" aria-label="Ảnh thu nhỏ">
                     <img src="image/${product.folder}/${product.id}-1.jpg" alt="${product.name}" onerror="this.style.display='none'">
                     <img src="image/${product.folder}/${product.id}-2.jpg" alt="${product.name}" onerror="this.style.display='none'">
                     <img src="image/${product.folder}/${product.id}-3.jpg" alt="${product.name}" onerror="this.style.display='none'">
