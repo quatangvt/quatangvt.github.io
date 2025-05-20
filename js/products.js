@@ -163,7 +163,8 @@ const products = [
         price: '350đ - 450đ',
         description: 'Túi đựng bánh trung thu đa dạng kích cỡ, phù hợp với bánh size 9, 10, 11, thiết kế đẹp mắt.',
         videos: [
-            'image/tui-dung-banh-trung-thu-sz-9-10-11/tui-dung-banh-trung-thu-sz-91011-2.mp4'
+            'image/tui-dung-banh-trung-thu-sz-9-10-11/tui-dung-banh-trung-thu-sz-91011-2.mp4',
+            'image/tui-dung-banh-trung-thu-sz-9-10-11/tui-dung-banh-trung-thu-sz-91011-9.mp4'
         ]
     }
 ];

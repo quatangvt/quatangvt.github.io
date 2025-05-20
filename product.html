@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết sản phẩm - Phụ kiện Trung Thu</title>
+    <link rel="icon" href="image/favicon.png" type="image/x-icon">
+    <meta name="description" content="Hộp quà tặng Vân Thắng - chuyên cung cấp hộp quà tặng sang trọng, độc đáo phù hợp mọi dịp lễ tết, sinh nhật; giao hàng toàn quốc, hỗ trợ cá nhân hóa thiết kế.">
+    <meta name="robots" content="index,follow">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -35,6 +38,96 @@
             animation: shake 0.5s ease-in-out;
         }
     </style>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Chi tiết sản phẩm - Phụ kiện Trung Thu" />
+    <meta property="og:description" content="Hộp quà tặng Vân Thắng - chuyên cung cấp hộp quà tặng sang trọng, độc đáo phù hợp mọi dịp lễ tết, sinh nhật; giao hàng toàn quốc, hỗ trợ cá nhân hóa thiết kế." />
+    <meta property="og:image" content="https://quatangvtvanhvnh.github.io/image/png-clipart-line-gift-logo-line-text-heart.png" />
+    <meta property="og:url" content="https://quatangvtvanhvnh.github.io/product.html" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chi tiết sản phẩm - Phụ kiện Trung Thu" />
+    <meta name="twitter:description" content="Hộp quà tặng Vân Thắng - chuyên cung cấp hộp quà tặng sang trọng, độc đáo phù hợp mọi dịp lễ tết, sinh nhật; giao hàng toàn quốc, hỗ trợ cá nhân hóa thiết kế." />
+    <meta name="twitter:image" content="https://quatangvtvanhvnh.github.io/image/png-clipart-line-gift-logo-line-text-heart.png" />
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Phụ kiện Trung Thu",
+      "description": "Hộp quà tặng Vân Thắng - chuyên cung cấp hộp quà tặng sang trọng, độc đáo phù hợp mọi dịp lễ tết, sinh nhật.",
+      "url": "https://quatangvtvanhvnh.github.io/product.html",
+      "brand": {
+        "@type": "Brand",
+        "name": "Hộp quà tặng Vân Thắng"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "VND",
+        "lowPrice": "4000",
+        "highPrice": "40000",
+        "offerCount": "17",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+    <style>
+        /* Gallery navigation styles */
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .gallery-nav:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+        
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .indicator.active {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
     <body class="flex flex-col min-h-screen bg-gray-100">
@@ -43,7 +136,10 @@
         <div class="container">
             <h1>Phụ kiện Trung Thu</h1>
             <p>Chuyên cung cấp các phụ kiện bánh trung thu</p>
-            <a href="index.html" class="back-btn">← Quay lại trang chủ</a>
+            <nav class="mt-4">
+                <a href="index.html" class="back-btn mr-4">← Trang chủ</a>
+                <a href="blog.html" class="text-blue-600 hover:text-blue-800 font-medium">Blog</a>
+            </nav>
         </div>
     </header>
 
@@ -60,8 +156,23 @@
             </div>
             
             <h3 class="gallery-title">Thư viện hình ảnh</h3>
-            <div class="product-images" id="product-images">
-                <!-- Hình ảnh sản phẩm sẽ được hiển thị ở đây bằng JavaScript -->
+            <div class="gallery-container mb-6">
+                <div class="product-images" id="product-images">
+                    <!-- Hình ảnh sản phẩm sẽ được hiển thị ở đây bằng JavaScript -->
+                </div>
+                <div class="gallery-nav prev-btn" id="gallery-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </div>
+                <div class="gallery-nav next-btn" id="gallery-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+            <div class="gallery-indicators" id="gallery-indicators">
+                <!-- Indicators will be added dynamically -->
             </div>
         </section>
     </main>
@@ -174,5 +285,6 @@
                 </svg>
             </a>
         </div>
+    </div>
 </body>
 </html> 
