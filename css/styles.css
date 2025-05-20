@@ -391,4 +391,19 @@ header a.back-btn:hover {
 
 .gallery-indicators img.active {
     border-color: var(--primary-color);
+}
+
+/* Thumbnail strip under each product card on homepage */
+.product-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 8px 0;
+}
+
+.product-thumbnails img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
 } 
