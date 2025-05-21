@@ -5,8 +5,6 @@ date: 2025-05-18 11:15:00 +0700
 categories: xu-huong thiet-ke
 ---
 
-# 5 xu hướng thiết kế hộp bánh Trung thu năm 2025
-
 ![Xu hướng thiết kế hộp bánh](/image/hop-song-nguyet-4-6-banh/hop-song-nguyet-4-6-banh-1.jpg)
 
 Mỗi năm, thiết kế hộp bánh Trung thu lại có những thay đổi mới mẻ, phản ánh xu hướng thẩm mỹ và nhu cầu của thị trường. Năm 2025 đánh dấu sự chuyển mình mạnh mẽ trong thiết kế hộp bánh với 5 xu hướng nổi bật sau đây.
