@@ -7,6 +7,22 @@ Website giới thiệu và bán các phụ kiện bánh trung thu như hộp đ�
 - **Trang chủ**: Hiển thị danh sách tất cả sản phẩm phụ kiện.
 - **Trang chi tiết sản phẩm**: Hiển thị thông tin chi tiết và tất cả hình ảnh của một sản phẩm cụ thể.
 - **Ảnh thu nhỏ**: Hiển thị ba ảnh thu nhỏ dưới mỗi sản phẩm trên trang chủ để xem trước.
+- **Blog Jekyll**: Sử dụng Jekyll để quản lý blog, nội dung được viết bằng Markdown trong thư mục `_posts/`.
+
+## Blog với Jekyll
+
+- Website sử dụng Jekyll để quản lý blog, giúp:
+- - Viết bài dễ dàng với file Markdown trong thư mục `_posts/`
+- - Đặt tên file format: `YYYY-MM-DD-tieu-de.md`
+- - Mỗi bài viết cần có YAML front matter ở đầu:
+- ```
+- ---
+- layout: post
+- title: "Tiêu đề bài viết"
+- date: YYYY-MM-DD HH:MM:SS +0700
+- categories: blog
+- ---
+- ```
 
 ## Cấu trúc thư mục
 
@@ -14,6 +30,11 @@ Website giới thiệu và bán các phụ kiện bánh trung thu như hộp đ�
 /
 ├── index.html             # Trang chủ
 ├── product.html           # Trang chi tiết sản phẩm
+├── _posts/              # Thư mục chứa bài viết blog
+│   └── YYYY-MM-DD-tieu-de.md # Các bài viết định dạng Markdown
+├── blog.md              # Trang liệt kê bài viết blog (Jekyll)
+├── _config.yml          # Cấu hình Jekyll
+├── Gemfile              # Định nghĩa gem cho Jekyll
 ├── css/
 │   └── styles.css         # CSS cho website
 ├── js/
