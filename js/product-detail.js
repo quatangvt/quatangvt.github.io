@@ -50,8 +50,21 @@ function displayProductInfo(product) {
     const productInfoElement = document.getElementById('product-info');
     if (productInfoElement) {
         productInfoElement.innerHTML = `
-            <div class="product-detail-image">
-                <img src="${product.thumbnail}" alt="${product.name}" class="product-image">
+            <div class="gallery-section">
+                <div class="gallery-container mb-6">
+                    <div class="product-images" id="product-images"></div>
+                    <div class="gallery-nav prev-btn" id="gallery-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </div>
+                    <div class="gallery-nav next-btn" id="gallery-next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="gallery-indicators" id="gallery-indicators"></div>
             </div>
             <div class="product-info">
                 <h3 class="price-title">Giá:</h3>
@@ -124,6 +137,13 @@ function loadProductImages(product, container) {
     // Xóa nội dung cũ
     container.innerHTML = '';
     
+    // Thêm video vào gallery nếu có
+    if (product.videos && product.videos.length > 0) {
+        product.videos.forEach(videoPath => {
+            productImages.push(videoPath);
+        });
+    }
+    
     // Xóa chỉ báo cũ
     const indicatorsContainer = document.getElementById('gallery-indicators');
     if (indicatorsContainer) {
@@ -185,38 +205,40 @@ function displayImage(index) {
     
     const imagesContainer = document.getElementById('product-images');
     if (imagesContainer) {
-        const img = document.createElement('img');
-        img.src = productImages[index];
-        img.alt = `Sản phẩm - Hình ${index + 1}`;
-        img.className = 'product-image';
-        
-        // Xử lý lỗi nếu ảnh không tồn tại
-        img.onerror = function() {
-            // Xóa ảnh này khỏi mảng
-            productImages.splice(index, 1);
-            
-            // Nếu còn ảnh khác, hiển thị ảnh tiếp theo
-            if (productImages.length > 0) {
-                const newIndex = index % productImages.length;
-                displayImage(newIndex);
-                createGalleryIndicators(); // Tạo lại chỉ báo
-            } else {
-                imagesContainer.innerHTML = '<p>Không có hình ảnh.</p>';
-            }
-        };
-        
-        // Xử lý sự kiện khi ảnh tải thành công
-        img.onload = function() {
-            // Tạo lightbox khi click vào ảnh
-            img.addEventListener('click', function() {
-                openLightbox(productImages[index], `Sản phẩm - Hình ${index + 1}`);
-            });
-        };
-        
-        // Xóa nội dung cũ và thêm ảnh mới
+        const src = productImages[index];
         imagesContainer.innerHTML = '';
-        imagesContainer.appendChild(img);
-        
+        if (src.match(/\.(mp4|webm)$/i)) {
+            const video = document.createElement('video');
+            video.controls = true;
+            video.preload = 'metadata';
+            video.className = 'video-player';
+            const source = document.createElement('source');
+            source.src = src;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+            imagesContainer.appendChild(video);
+        } else {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Sản phẩm - Hình ${index + 1}`;
+            img.className = 'product-image';
+            img.onerror = function() {
+                productImages.splice(index, 1);
+                if (productImages.length > 0) {
+                    const newIndex = index % productImages.length;
+                    displayImage(newIndex);
+                    createGalleryIndicators();
+                } else {
+                    imagesContainer.innerHTML = '<p>Không có phương tiện.</p>';
+                }
+            };
+            img.onload = function() {
+                img.addEventListener('click', function() {
+                    openLightbox(src, `Sản phẩm - phương tiện ${index + 1}`);
+                });
+            };
+            imagesContainer.appendChild(img);
+        }
         // Cập nhật chỉ báo
         updateGalleryIndicators(index);
     }
@@ -230,7 +252,13 @@ function createGalleryIndicators() {
     indicatorsContainer.innerHTML = '';
     productImages.forEach((src, index) => {
         const thumb = document.createElement('img');
-        thumb.src = src;
+        // Use corresponding .jpg for video thumbnails, else use src
+        const thumbSrc = src.match(/\.(mp4|webm)$/i)
+            ? src.replace(/\.(mp4|webm)$/i, '.jpg')
+            : src;
+        thumb.src = thumbSrc;
+        // Hide if thumbnail doesn't exist
+        thumb.onerror = () => { thumb.style.display = 'none'; };
         thumb.alt = `Thumbnail ${index + 1}`;
         if (index === currentImageIndex) thumb.classList.add('active');
         thumb.addEventListener('click', () => displayImage(index));
