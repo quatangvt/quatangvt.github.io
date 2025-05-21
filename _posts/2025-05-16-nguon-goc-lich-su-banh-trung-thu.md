@@ -5,8 +5,6 @@ date: 2025-05-16 15:30:00 +0700
 categories: lich-su truyen-thong
 ---
 
-# Nguồn gốc và lịch sử bánh Trung thu qua các thời kỳ
-
 ![Bánh Trung thu truyền thống](/image/hop-lam-cuc-4-6-banh/hop-lam-cuc-4-6-banh-1.jpg)
 
 Tết Trung thu là một trong những ngày lễ cổ truyền quan trọng nhất của các nước Đông Á, trong đó có Việt Nam. Bên cạnh những hoạt động như múa lân, rước đèn, phá cỗ, bánh Trung thu đã trở thành biểu tượng không thể thiếu trong ngày lễ này. Hãy cùng tìm hiểu về nguồn gốc và hành trình phát triển của bánh Trung thu qua các thời kỳ lịch sử.
