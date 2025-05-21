@@ -1,7 +1,7 @@
 title: "Hộp quà tặng Vân Thắng"
 description: "Blog chia sẻ tin tức và kiến thức về phụ kiện bánh Trung Thu"
 baseurl: ""           # If hosted at root of domain
-url: "https://quatangvtvanhvnh.github.io"    # Your site URL
+url: "https://quatangvt.github.io"    # Your site URL
 
 theme: minima
 plugins:
@@ -9,4 +9,4 @@ plugins:
 paginate: 5
 
 # Exclude static files not needed in build
-disable: [README.md] 
+exclude: [README.md] 
